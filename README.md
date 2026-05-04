@@ -22,7 +22,7 @@ python -m pip install -r requirements.txt
 
 Train (example):
 ```bash
-python main.py --data-root ../../dataset-2master --model resnet18 --pretrained --epochs 5
+python ResNet_cell_classifier.py --data-root ../../dataset2-master --model resnet18 --pretrained --epochs 5
 ```
 
 Notes:
