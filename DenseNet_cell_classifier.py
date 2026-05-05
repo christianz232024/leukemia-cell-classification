@@ -19,8 +19,8 @@ import random
 # ─────────────────────────────────────────────
 # CONFIG
 # ─────────────────────────────────────────────
-TRAIN_DIR   = "/Users/morganbradley/Downloads/archive/dataset2-master/dataset2-master/images/TRAIN"
-TEST_DIR    = "/Users/morganbradley/Downloads/archive/dataset2-master/dataset2-master/images/TEST"
+TRAIN_DIR   = "/dataset2-master/dataset2-master/images/TRAIN"
+TEST_DIR    = "/dataset2-master/dataset2-master/images/TEST"
 
 IMG_SIZE    = 224       # DenseNet-121 native resolution (was 160)
 BATCH_SIZE  = 32
