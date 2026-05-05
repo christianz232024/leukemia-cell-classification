@@ -1,30 +1,73 @@
-# leukemia-cell-classification
-This project focuses on classifying blood cell types using microscopy images. The dataset consists of approximately 12,500 augmented images of white blood cells, labeled into four categories: Eosinophil, Lymphocyte, Monocyte, and Neutrophil. Each class contains roughly 3,000 images.
-In addition to the augmented dataset, a smaller original dataset of 410 images is provided with bounding box annotations and subtype labels.
-The goal of this project is to train a deep learning model to accurately classify cell types from image data. As an extension, the model may also be used to distinguish between normal and leukemia-related cell patterns.
-Different model architectures are explored and compared for performance. While one approach uses a ConvNeXt-based model, this implementation evaluates an alternative architecture to assess differences in accuracy and generalization.
+This project implements an end-to-end deep learning pipeline for automated classification of white blood cells from microscopy images. The model is based on a fully fine-tuned DenseNet-121 architecture with differential learning rates applied to the backbone and classifier head.
 
-## Run (single-label 4-class, ResNet)
+The goal is to accurately classify four major white blood cell types:
 
-This implementation trains a **ResNet** (not DenseNet) on the original `dataset-master` images by reading `dataset-master/labels.csv` and **filtering to single-label rows** in:
-- `EOSINOPHIL`
-- `LYMPHOCYTE`
-- `MONOCYTE`
-- `NEUTROPHIL`
+Eosinophil
+Lymphocyte
+Monocyte
+Neutrophil
+
+This has applications in medical diagnostics, including infection detection and hematological analysis.
+
+Features:
+
+DenseNet-121 pretrained on ImageNet
+Full backbone fine-tuning with differential learning rates
+Advanced data augmentation tailored to microscopy images
+Class-weighted loss with label smoothing
+Early stopping based on validation accuracy
+Cosine annealing learning rate scheduler
+Gradient clipping for stable training
+Detailed evaluation using classification report and confusion matrix
+
+Dataset
+
+The dataset is expected to follow the structure:
+
+dataset/
+├── TRAIN/
+│   ├── EOSINOPHIL/
+│   ├── LYMPHOCYTE/
+│   ├── MONOCYTE/
+│   └── NEUTROPHIL/
+└── TEST/
+    ├── EOSINOPHIL/
+    ├── LYMPHOCYTE/
+    ├── MONOCYTE/
+    └── NEUTROPHIL/
+
+Update the paths in the script:
+
+TRAIN_DIR = "path/to/TRAIN"
+TEST_DIR  = "path/to/TEST"
+
+Instalation requirements:
+
+Python 3.8+
+PyTorch
+torchvision
+scikit-learn
+numpy
+tqdm
 
 Install dependencies:
 
-```bash
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements.txt
-```
+pip install torch torchvision scikit-learn numpy tqdm
 
-Train (example):
-```bash
-python ResNet_cell_classifier.py --data-root dataset2-master --model resnet18 --pretrained --epochs 5
-```
+Running script:
 
-Notes:
-- If you are on Apple Silicon, the script will use **MPS** automatically when available.
-- The dataset is imbalanced (especially `MONOCYTE` / `LYMPHOCYTE`), so look at per-class accuracy in addition to overall accuracy.
+Run the training script:
+
+python your_script_name.py
+
+The script will:
+
+Split training data into train/validation sets
+Train the model with early stopping
+
+Save the best model to:
+
+densenet_improved.pth
+Evaluate performance on the test set
+
+Note: If you are able, run on a GPU. Model takes aproximately 9 hours to train on device. 
