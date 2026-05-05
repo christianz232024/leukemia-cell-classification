@@ -71,4 +71,4 @@ Save the best model to:
 densenet_improved.pth
 Evaluate performance on the test set
 
-# Note: If you are able, run on a GPU. Model takes aproximately 9 hours to train on device. 
+Note: If you are able, run on a GPU. Model takes aproximately 9 hours to train on device. 
