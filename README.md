@@ -25,17 +25,17 @@ Detailed evaluation using classification report and confusion matrix
 
 The dataset is expected to follow the structure:
 
-dataset/
-├── TRAIN/
-│   ├── EOSINOPHIL/
-│   ├── LYMPHOCYTE/
-│   ├── MONOCYTE/
-│   └── NEUTROPHIL/
-└── TEST/
-    ├── EOSINOPHIL/
-    ├── LYMPHOCYTE/
-    ├── MONOCYTE/
-    └── NEUTROPHIL/
+dataset/\newline
+├── TRAIN/\newline
+│   ├── EOSINOPHIL/\newline
+│   ├── LYMPHOCYTE/\newline
+│   ├── MONOCYTE/\newline
+│   └── NEUTROPHIL/\newline
+└── TEST/\newline
+    ├── EOSINOPHIL/\newline
+    ├── LYMPHOCYTE/\newline
+    ├── MONOCYTE/\newline
+    └── NEUTROPHIL/\newline
 
 Update the paths in the script:
 
