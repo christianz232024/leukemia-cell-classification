@@ -25,14 +25,21 @@ Detailed evaluation using classification report and confusion matrix
 
 The dataset is expected to follow the structure:
 
-dataset/\newline
-├── TRAIN/\newline
-│   ├── EOSINOPHIL/\newline
-│   ├── LYMPHOCYTE/\newline
-│   ├── MONOCYTE/\newline
-│   └── NEUTROPHIL/\newline
-└── TEST/\newline
-    ├── EOSINOPHIL/\newline
+dataset/
+
+├── TRAIN/
+
+    │   ├── EOSINOPHIL/
+
+    │   ├── LYMPHOCYTE/
+
+    │   ├── MONOCYTE/
+
+    │   └── NEUTROPHIL/
+
+└── TEST/
+
+    ├── EOSINOPHIL/
     ├── LYMPHOCYTE/\newline
     ├── MONOCYTE/\newline
     └── NEUTROPHIL/\newline
