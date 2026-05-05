@@ -30,19 +30,16 @@ dataset/
 ├── TRAIN/
 
     │   ├── EOSINOPHIL/
-
     │   ├── LYMPHOCYTE/
-
     │   ├── MONOCYTE/
-
     │   └── NEUTROPHIL/
 
 └── TEST/
 
     ├── EOSINOPHIL/
-    ├── LYMPHOCYTE/\newline
-    ├── MONOCYTE/\newline
-    └── NEUTROPHIL/\newline
+    ├── LYMPHOCYTE/
+    ├── MONOCYTE/
+    └── NEUTROPHIL/
 
 Update the paths in the script:
 
