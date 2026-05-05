@@ -1,15 +1,16 @@
+# Overview
 This project implements an end-to-end deep learning pipeline for automated classification of white blood cells from microscopy images. The model is based on a fully fine-tuned DenseNet-121 architecture with differential learning rates applied to the backbone and classifier head.
 
 The goal is to accurately classify four major white blood cell types:
 
-Eosinophil
-Lymphocyte
-Monocyte
-Neutrophil
+- Eosinophil
+- Lymphocyte
+- Monocyte
+- Neutrophil
 
 This has applications in medical diagnostics, including infection detection and hematological analysis.
 
-Features:
+# Features:
 
 DenseNet-121 pretrained on ImageNet
 Full backbone fine-tuning with differential learning rates
@@ -20,7 +21,7 @@ Cosine annealing learning rate scheduler
 Gradient clipping for stable training
 Detailed evaluation using classification report and confusion matrix
 
-Dataset
+# Dataset:
 
 The dataset is expected to follow the structure:
 
@@ -41,7 +42,7 @@ Update the paths in the script:
 TRAIN_DIR = "path/to/TRAIN"
 TEST_DIR  = "path/to/TEST"
 
-Instalation requirements:
+# Instalation requirements:
 
 Python 3.8+
 PyTorch
@@ -54,7 +55,7 @@ Install dependencies:
 
 pip install torch torchvision scikit-learn numpy tqdm
 
-Running script:
+# Running script:
 
 Run the training script:
 
@@ -70,4 +71,4 @@ Save the best model to:
 densenet_improved.pth
 Evaluate performance on the test set
 
-Note: If you are able, run on a GPU. Model takes aproximately 9 hours to train on device. 
+# Note: If you are able, run on a GPU. Model takes aproximately 9 hours to train on device. 
